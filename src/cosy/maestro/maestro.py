@@ -69,3 +69,5 @@ class Maestro(Generic[T]):
             component_interpretations=self.component_interpretations,
             named_components_with_specifications=self.named_components_with_specifications,
         )
+
+    def visualize_taxonomy

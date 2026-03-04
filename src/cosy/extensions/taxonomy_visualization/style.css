@@ -1,0 +1,103 @@
+:root {
+  font-weight: 400;
+  font: 12px FiraMono;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  margin-left: 10px;
+  font: 12px FiraMono;
+}
+
+.collapsible-tree {
+  margin-top: 30px;
+}
+
+.sticky-header {
+  background-color: #f2f2f2;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+}
+
+.radio-buttons {
+  min-width: 208px;
+}
+
+.marked-components {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: 7px;
+  width: auto;
+}
+
+.marked {
+  margin-top: 3px;
+}
+
+
+@font-face {
+  font-family: "FiraMono";
+  src: url("/public/assets/fonts/FiraMono-Medium.ttf");
+}
+
+.grow-wrap {
+  display: grid;
+}
+
+.grow-wrap::after {
+  /* Note the weird space! Needed to preventy jumpy behavior */
+  content: attr(data-replicated-value) " ";
+
+  /* This is how textarea text behaves */
+  white-space: pre-wrap;
+
+  /* Hidden from view, clicks, and screen readers */
+  visibility: hidden;
+}
+
+.grow-wrap > textarea {
+  /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+  resize: none;
+
+  /* Firefox shows scrollbar on growth, you can hide like this. */
+  overflow: hidden;
+}
+
+.grow-wrap > textarea,
+.grow-wrap::after {
+  /* Identical styling required!! */
+  font: 12px FiraMono;
+  padding-bottom: 4px;
+
+  /* Place on top of each other */
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.edge-circle {
+  color: red;
+}
+
+.circleAfter {
+
+}
+
+.curve {
+  fill: none;
+  stroke: green;
+  pointer-events: none;
+}
+
+path {
+ pointer-events: none;
+}
+
+
