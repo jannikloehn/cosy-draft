@@ -82,9 +82,8 @@ document.querySelector("#expandButton").addEventListener('click', expandAll)
 document.querySelector("#collapseButton").addEventListener('click', collapseAll)
 
 console.log("TaxonomyData arrived.");
-window.taxonomyRoot = "Format"
 var old_data = {
-    "Format": [
+    "Format2": [
         "Flat",
         "Extrusion",
         "Round",
@@ -135,13 +134,16 @@ var old_data = {
     "10w_30l_x2_Extrusion": [],
     "30w_30l_x4_Extrusion": []
 }
-console.log("old_data", old_data)
+//console.log("old_data", old_data)
 fetch('./taxonomy.json')
   .then(response => response.json())
   .then(data => {
     console.log("data", data)
+    window.taxonomyRoot = Object.keys(data)[0].toString()
     window.taxonomyData = data;
     console.log('taxonomy: ', window.taxonomyData)
+    console.log(Object.keys(data))
+    console.log(window.taxonomyRoot)
     window.d3data = DataStructures.convertTaxonomyToD3(window.taxonomyData)
     window.selectedElements = []
     window.edgeMode = false
