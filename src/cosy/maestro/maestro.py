@@ -6,6 +6,7 @@ from cosy.core.subtypes import Taxonomy
 from cosy.core.synthesizer import Specification, Synthesizer
 from cosy.core.types import Type
 from cosy.extensions.solutions import MaestroSolutions
+from cosy.extensions.visualize_taxonomy import visualize_taxonomy
 
 T = TypeVar("T", bound=Hashable)
 
@@ -69,3 +70,7 @@ class Maestro(Generic[T]):
             component_interpretations=self.component_interpretations,
             named_components_with_specifications=self.named_components_with_specifications,
         )
+
+    def visualize_taxonomy(self):
+        visualize_taxonomy(self.taxonomy)
+        # visualize_taxonomy(self._synthesizer.subtypes.taxonomy)
